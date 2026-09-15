@@ -22,7 +22,7 @@ export const contactContent: ContactSection = {
         {
             id: "resume",
             label: "Download Resume",
-            href: "/resume.pdf",
+            href: "/resume",
         },
     ],
 

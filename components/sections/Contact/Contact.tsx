@@ -66,8 +66,8 @@ export default function Contact() {
                   <Link
                     key={social.id}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={social.external ? "_blank" : undefined}
+                    rel={social.external ? "noopener noreferrer" : undefined}
                     aria-label={social.label}
                     className="
                       rounded-full

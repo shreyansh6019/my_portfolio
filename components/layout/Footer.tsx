@@ -16,8 +16,8 @@ export default function Footer() {
                         <Link
                             key={social.label}
                             href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            target={social.external ? "_blank" : undefined}
+                            rel={social.external ? "noopener noreferrer" : undefined}
                             aria-label={social.label}
                             className="transition-colors hover:text-foreground"
                         >

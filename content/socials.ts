@@ -24,7 +24,7 @@ export const SOCIALS: Social[] = [
     {
         id: "resume",
         label: "Resume",
-        href: "/resume.pdf",
+        href: "/resume",
         icon: FileText,
     },
     {

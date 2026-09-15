@@ -5,5 +5,6 @@ export interface Social {
     id: string;
     label: string;
     href: string;
+    external?: boolean;
     icon?: LucideIcon | IconType;
 }
