@@ -46,9 +46,11 @@ export default function Navbar() {
     const handleNavigation = (id: string) => {
         setIsOpen(false);
 
-        requestAnimationFrame(() => {
+        document.body.style.overflow = "";
+
+        setTimeout(() => {
             scrollTo(id);
-        });
+        }, 50);
     };
 
     return (
