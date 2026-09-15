@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { siteConfig } from "@/config/sitemap";
 
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import { personStructuredData } from "@/lib/structured-data";
