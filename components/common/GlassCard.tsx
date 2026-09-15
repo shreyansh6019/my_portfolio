@@ -2,8 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-export interface GlassCardProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export type GlassCardProps = React.HTMLAttributes<HTMLDivElement>;
 
 const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
   ({ className, children, ...props }, ref) => {

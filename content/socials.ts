@@ -1,6 +1,4 @@
 import {
-    GitBranch,
-    ExternalLink,
     Mail,
     FileText,
 } from "lucide-react";

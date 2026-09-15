@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, Home } from "lucide-react";
 
 import { GlassCard } from "@/components/common/GlassCard";
+import { Home } from "lucide-react";
 
 export default function NotFound() {
     return (
@@ -19,7 +19,7 @@ export default function NotFound() {
                             </h1>
 
                             <p className="mx-auto max-w-lg text-lg leading-8 text-muted-foreground">
-                                The page you're looking for doesn't exist, may have been moved,
+                                The page you&apos;re looking for doesn&apos;t exist, may have been moved,
                                 or the URL might be incorrect.
                             </p>
                         </div>

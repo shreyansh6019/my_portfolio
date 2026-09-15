@@ -1,4 +1,3 @@
-// import { heroContent } from "@/content/hero";
 import {
     SiReact,
     SiNextdotjs,

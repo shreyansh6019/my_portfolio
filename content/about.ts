@@ -1,5 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
-
 export const aboutContent = {
     title: "About Me",
 

@@ -1,8 +1,5 @@
 import { experiences } from "@/content/experience";
 
-import Container from "@/components/layout/Container";
-import Section from "@/components/layout/Section";
-
 import FadeIn from "@/components/ui/FadeIn";
 
 import { SectionHeader } from "@/components/common";

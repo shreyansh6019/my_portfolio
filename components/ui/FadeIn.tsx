@@ -18,7 +18,7 @@ export default function FadeIn({
 }: FadeInProps) {
     return (
         <motion.div
-            variants={fadeUp as any}
+            variants={fadeUp as never}
             initial="hidden"
             whileInView="visible"
             viewport={{
