@@ -51,8 +51,6 @@ export default function Navbar() {
         });
     };
 
-    console.log(activeSection, "Active Section");
-
     return (
         <header
             className={cn(

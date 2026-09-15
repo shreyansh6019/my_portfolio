@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 
 export function useScrollSpy(ids: string[]) {
-    const [activeSection, setActiveSection] = useState(ids[0]);
+    const [activeSection, setActiveSection] =
+        useState<string | null>(null);
 
     useEffect(() => {
         const sections = ids
@@ -12,35 +13,67 @@ export function useScrollSpy(ids: string[]) {
 
         if (!sections.length) return;
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                
-                const visible = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort(
-                        (a, b) =>
-                            b.intersectionRatio -
-                            a.intersectionRatio
-                    );
-                
-                console.log(entries, "Entries", ids, "Ids", sections, "Sections", visible, "Visible");
-                if (visible.length > 0) {
-                    setActiveSection(
-                        visible[0].target.id
-                    );
+        let ticking = false;
+
+        const updateActiveSection = () => {
+            const triggerPoint =
+                window.innerHeight * 0.35;
+
+            let currentSection: HTMLElement | null =
+                null;
+
+            for (const section of sections) {
+                const { top } =
+                    section.getBoundingClientRect();
+
+                if (top <= triggerPoint) {
+                    currentSection = section;
+                } else {
+                    break;
                 }
-            },
-            {
-                rootMargin: "-25% 0px -55% 0px",
-                threshold: [0.2, 0.4, 0.6],
             }
+
+            setActiveSection(
+                currentSection?.id ?? null
+            );
+
+            ticking = false;
+        };
+
+        const handleScroll = () => {
+            if (ticking) return;
+
+            ticking = true;
+
+            window.requestAnimationFrame(
+                updateActiveSection
+            );
+        };
+
+        updateActiveSection();
+
+        window.addEventListener(
+            "scroll",
+            handleScroll,
+            { passive: true }
         );
 
-        sections.forEach((section) =>
-            observer.observe(section)
+        window.addEventListener(
+            "resize",
+            handleScroll
         );
 
-        return () => observer.disconnect();
+        return () => {
+            window.removeEventListener(
+                "scroll",
+                handleScroll
+            );
+
+            window.removeEventListener(
+                "resize",
+                handleScroll
+            );
+        };
     }, [ids]);
 
     return activeSection;
