@@ -116,17 +116,20 @@ export default function Navbar() {
                         Resume
                     </Link>
                 </div>
-                <button
-                    aria-label="Toggle navigation"
-                    onClick={() => setIsOpen((prev) => !prev)}
-                    className="rounded-lg p-2 transition hover:bg-muted md:hidden"
-                >
-                    {isOpen ? (
-                        <X className="h-5 w-5" />
-                    ) : (
-                        <Menu className="h-5 w-5" />
-                    )}
-                </button>
+                <div className="items-center gap-2 flex md:hidden">
+                    <ThemeToggle />
+                    <button
+                        aria-label="Toggle navigation"
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        className="rounded-lg p-2 transition hover:bg-muted md:hidden"
+                    >
+                        {isOpen ? (
+                            <X className="h-5 w-5" />
+                        ) : (
+                            <Menu className="h-5 w-5" />
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
