@@ -10,7 +10,7 @@ export const heroContent = {
 
     primaryCTA: {
         label: "View Projects",
-        href: "#projects",
+        href: "#work",
     },
 
     secondaryCTA: {
